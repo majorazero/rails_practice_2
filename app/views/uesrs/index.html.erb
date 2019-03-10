@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Uesrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uesrs.each do |uesr| %>
+      <tr>
+        <td><%= uesr.name %></td>
+        <td><%= uesr.email %></td>
+        <td><%= link_to 'Show', uesr %></td>
+        <td><%= link_to 'Edit', edit_uesr_path(uesr) %></td>
+        <td><%= link_to 'Destroy', uesr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uesr', new_uesr_path %>
